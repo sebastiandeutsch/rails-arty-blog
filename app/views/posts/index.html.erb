@@ -1,0 +1,13 @@
+<h1>My awesome Syrian/Armenia Blog about food</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <h2>
+        <%= post.headline %>
+      </h2>
+    </li>
+  <% end %>
+</ul>
+
+
