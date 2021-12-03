@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="error-<%= type %>">
+        <%= msg %>
+      </div>
+    <% end %>
+
+    <nav>
+      <%= link_to 'New Post', new_post_path %>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
