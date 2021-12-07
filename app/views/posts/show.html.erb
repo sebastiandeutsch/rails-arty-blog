@@ -7,5 +7,28 @@
 </p>
 
 <h2>
+  New Comment
+</h2>
+
+<%= form_for [@post, Comment.new] do |f| %>
+  <div>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<h2>
   Comments
 </h2>
+
+<% @post.comments.each do |comment| %>
+  <ul>
+    <li>
+      <%= comment.text %>
+    </li>
+  </ul>
+<% end %>
