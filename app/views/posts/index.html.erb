@@ -4,7 +4,7 @@
   <% @posts.each do |post| %>
     <li>
       <h2>
-        <%= post.headline %>
+        <%= link_to post.headline, post_path(post) %>
       </h2>
       <p>
         <%= link_to 'Edit Post', edit_post_path(post) %>
