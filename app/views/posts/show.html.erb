@@ -16,6 +16,14 @@
     <%= f.text_area :text %>
   </div>
   <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
@@ -28,7 +36,16 @@
 <% @post.comments.each do |comment| %>
   <ul>
     <li>
-      <%= comment.text %>
+      <p>
+        <%= comment.text %>
+      </p>
+      <p>
+        <%= link_to comment.name, "mailto:#{comment.email}" %> has written the post on
+        <%= comment.created_at.strftime("%d.%m.%Y") %>
+      </p>
+      <div>
+        <%= link_to 'delete', post_comment_path(@post, comment), method: 'DELETE' %>
+      </div>
     </li>
   </ul>
 <% end %>
