@@ -10,4 +10,6 @@ class Post < ApplicationRecord
 
   # N..M
   # has_and_belongs_to_many :comments
+
+  has_one_attached :image
 end
